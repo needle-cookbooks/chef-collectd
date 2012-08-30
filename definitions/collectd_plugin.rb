@@ -45,7 +45,7 @@ define :collectd_python_plugin, :options => {}, :module => nil, :path => nil do
     end
     retry
   end
-  unless params[:path].nil?
+  if not params[:path].nil?
     t.variables[:options][:paths] << params[:path]
   end
   t.variables[:options][:modules][params[:module] || params[:name]] = params[:options]
